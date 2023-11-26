@@ -46,11 +46,11 @@ const Edu = () => {
         <div className="bg-black h-5"></div>
 
         <h2 className="text-3xl font-semibold text-center my-8">Skills</h2>
-        <div className=" bg-black px-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className=" bg-black px-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="p-6 bg-black rounded-lg shadow-md flex flex-col items-center skill-card"
+              className="p-2  bg-black rounded-lg shadow-md flex flex-col items-center skill-card"
             >
               {skill.icon}
               <span>{skill.name}</span>
