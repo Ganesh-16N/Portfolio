@@ -23,7 +23,7 @@ const Home = () => {
               offset={50}
               duration={700}
             >
-              Contact Me
+              Contact Me 
             </Link>
             {/* <a
               href="#"

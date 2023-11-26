@@ -1,11 +1,11 @@
 import React from "react";
-import bookShop from "./Photos/bookShop.png";
+// import bookShop from "./Photos/bookShop.png";
 // import profImg from "./Photos/portfolio.png";
 import pmv from "./Photos/pmv image.png";
 import profite from "./Photos/profiteai image.png";
 import tollnaka from "./Photos/toll-naka.png";
-import mobileApp1 from "./Photos/mobileApp1.jpeg";
-import mobileApp2 from "./Photos/mobileApp2.jpeg";
+// import mobileApp1 from "./Photos/mobileApp1.jpeg";
+// import mobileApp2 from "./Photos/mobileApp2.jpeg";
 import Mob from "./Mob";
 
 const projectsData = [
@@ -73,7 +73,7 @@ const Project = ({ id, title, image, description, viewLink, codeLink }) => (
       </div>
     </div>
   </div>
-);
+); 
 
 const Projects = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import { FaHtml5, FaCss3Alt, FaReact, FaNode, FaDocker, FaGithub } from "react-icons/fa";
-import { SiJavascript, SiTypescript, SiRedux, SiExpress, SiMongodb, SiNetlify, SiTailwindcss } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaReact, FaNode, FaGithub } from "react-icons/fa";
+import { SiJavascript, SiTypescript, SiRedux, SiExpress, SiMongodb, SiTailwindcss } from "react-icons/si";
 
 const skills = [
   { icon: <SiJavascript className="text-4xl mb-2" />, name: "JavaScript" },
@@ -38,7 +38,7 @@ const Edu = () => {
               </div>
               <p>January 2023 - June 2023</p>
             </div>
-          </div>
+          </div> 
 
         </div>
 

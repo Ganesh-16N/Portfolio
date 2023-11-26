@@ -10,7 +10,7 @@ const Mob = () => {
   const projects = [
     {
       id: "TicTacToe",
-      title: "Tic Tac Toe",
+      title: "Tic Tac Toe", 
       image: mobileApp2,
       description: ["Crafted an engaging React Native Tic Tac Toe game application for Android, featuring a user-friendly interface."],
     //   viewLink: "https://github.com/Ganesh-16N/TicTacToe",

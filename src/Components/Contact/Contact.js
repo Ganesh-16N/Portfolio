@@ -3,7 +3,7 @@ import { RiGithubFill, RiLinkedinFill, RiMailFill, RiTwitterFill } from 'react-i
 
 
 const Contact = () => {
-  return (
+  return ( 
     <div className="bg-black text-white py-10">
      <h2 className="text-3xl font-semibold text-center my-8">Contact Me</h2>
       <div className="flex items-center justify-center space-x-6">

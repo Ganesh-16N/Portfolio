@@ -1,7 +1,7 @@
 // MobileAppCard.js
 
 import React from 'react';
-
+ 
 
 const MobileAppCard = ({ id, title, image, description, viewLink, codeLink }) => {
   return (

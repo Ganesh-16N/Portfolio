@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import Edu from "./Components/Edu/Edu";
@@ -6,13 +6,11 @@ import Home from "./Components/Home/Home";
 import Projects from "./Components/Projects/Projects";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-scroll";
-import Snowfall from "react-snowfall"; // Import the Snowfall component
 // import "./App.css"; // Import your CSS file for styling
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   // const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
-  const [visible, setVisible] = useState(true);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -31,12 +29,12 @@ function App() {
      } else {
        document.getElementById("navbar").style.top = "-10vh";
      }
-     prevScrollpos = currentScrollPos;
+     prevScrollpos = currentScrollPos; 
    };
 
 
   return (
-    <div className={`bg-black text-white min-h-screen font-sans ${visible ? "" : "hidden"}`}>
+    <div className={`bg-black text-white min-h-screen font-sans ${true ? "" : "hidden"}`}>
       <nav id="navbar" className="bg-gray-900 p-4 md:p-6 fixed w-full top-0 z-10 transition-all ease-in-out duration-300">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-xl md:text-2xl">My Portfolio</div>
