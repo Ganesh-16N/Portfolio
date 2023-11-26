@@ -1,5 +1,8 @@
 import React from "react";
-// import bookShop from "./Photos/bookShop.png";
+import bookShop from "./Photos/bookShop.png";
+import youtube from "./Photos/youtube.png";
+import advik from "./Photos/advik.png";
+import profImg from "./Photos/port.png";
 // import profImg from "./Photos/portfolio.png";
 import pmv from "./Photos/pmv image.png";
 import profite from "./Photos/profiteai image.png";
@@ -17,21 +20,11 @@ const projectsData = [
     // viewLink: "https://planmyventure.com/",
     // codeLink: "http://www.google.com",
   },
-  // {
-  //   id: "bookShop",
-  //   title: "E Book Shop",
-  //   image: bookShop,
-  //   description: [
-  //     "Designed an Android application for an online book shop, offering a user-friendly experience."
-  //     ," A MERN Application with features like login, book searching, and sorting, catering to both buyers and sellers."
-  //   ],
-  //   codeLink: "https://github.com/Ganesh-16N/E-Book-Store",
-  // },
   {
     id: "PlanMyVenture",
     title: "Plan My Venture",
     image: pmv,
-    description: ["created using MERN technologies, including TypeScript, React, Redux, and Tailwindcss, to develop and maintain a responsive web application. Demonstrated proficiency in crafting user-centric interfaces and collaborating with cross-functional teams."],
+    description: ["created using MERN technologies to develop and maintain a responsive web application. Demonstrated proficiency in crafting user-centric interfaces and collaborating with cross-functional teams."],
     viewLink: "https://planmyventure.com/",
     // codeLink: "http://www.google.com",
   },
@@ -40,15 +33,48 @@ const projectsData = [
     title: "Tollnaka",
     image: tollnaka,
     description: [
-      "Registering New Tolls",
-      "Automated Tariff selection",
-      "Searching the Vehicles and Sorting the Tolls",
-      "Fully functional made using ReactJS",
+      "Registering New Tolls.",
+      "Automated Tariff selection.",
+      "Searching the Vehicles and Sorting the Tolls.",
+      "Fully functional made using ReactJS.",
     ],
     viewLink: "https://toll-naka.netlify.app/",
     codeLink: "https://github.com/Ganesh-16N/toll-management-system",
   },
- 
+  {
+    id: "Portfolio",
+    title: "Portfolio",
+    image: profImg,
+    description: ["My portfolio showcasing a diverse range of projects that reflect my expertise in web development and Mobile Application development. "],
+    viewLink: "https://ganesh-nagargoje.netlify.app/",
+    // codeLink: "http://www.google.com",
+  },
+  {
+    id: "Youtube",
+    title: "Youtube Clone",
+    image: youtube,
+    description: ["A sleek, responsive Youtube Clone built from scratch. Seamlessly navigating through video content and offering a diverse spectrum of videos, channels."],
+    viewLink: "https://ganesh-youtube-clone.netlify.app/",
+    codeLink: "https://github.com/Ganesh-16N/youtube-clone",
+  },
+  {
+    id: "Advik",
+    title: "Advik",
+    image: advik,
+    description: ["To calculate and show live the distance between two points on the Earth's surface given their latitude and longitude coordinates."],
+    viewLink: "https://advikk.netlify.app/",
+    codeLink: "https://github.com/Ganesh-16N/advik",
+  },
+  {
+    id: "bookShop",
+    title: "E Book Shop",
+    image: bookShop,
+    description: [
+      "Designed an Android application for an online book shop, offering a user-friendly experience."
+      ," A MERN Application with features like login, book searching, and sorting, catering to both buyers and sellers."
+    ],
+    codeLink: "https://github.com/Ganesh-16N/E-Book-Store",
+  },
 ];
 
 const Project = ({ id, title, image, description, viewLink, codeLink }) => (
