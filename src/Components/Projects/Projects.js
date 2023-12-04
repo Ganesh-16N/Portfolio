@@ -17,7 +17,7 @@ const projectsData = [
     title: "Profite.ai",
     image: profite,
     description: ["React-based finance and business analysis web app at Plan My Venture. Achievements include creating intuitive interfaces, integrating third-party APIs, and showcasing expertise in JavaScript and the MERN stack."],
-    // viewLink: "https://planmyventure.com/",
+    viewLink: "https://profitenewdev.netlify.app",
     // codeLink: "http://www.google.com",
   },
   {
