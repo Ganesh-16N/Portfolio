@@ -13,7 +13,7 @@ const MobileAppCard = ({ id, title, image, description, viewLink, codeLink }) =>
         <div className="font-bold text-xl mb-2">{title}</div>
         <div className="mb-2">{"Mobile Application"}</div>
         <p className="text-gray-400 text-base">
-          {description.map((line, index) => (
+          {description && description.map((line, index) => (
             <span key={index}>{line}</span>
           ))}
         </p>

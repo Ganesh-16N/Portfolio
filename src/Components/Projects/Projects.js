@@ -3,7 +3,7 @@ import bookShop from "./Photos/bookShop.png";
 import youtube from "./Photos/youtube.png";
 import advik from "./Photos/advik.png";
 import profImg from "./Photos/port.png";
-// import profImg from "./Photos/portfolio.png";
+import team from "./Photos/team.png";
 import pmv from "./Photos/pmv image.png";
 import profite from "./Photos/profiteai image.png";
 import tollnaka from "./Photos/toll-naka.png";
@@ -53,7 +53,7 @@ const projectsData = [
     id: "Youtube",
     title: "Youtube Clone",
     image: youtube,
-    description: ["A sleek, responsive Youtube Clone built from scratch. Seamlessly navigating through video content and offering a diverse spectrum of videos, channels."],
+    description: ["A sleek Youtube Clone built from scratch. Seamlessly navigating through video content and offering a spectrum of videos, channels."],
     viewLink: "https://ganesh-youtube-clone.netlify.app/",
     codeLink: "https://github.com/Ganesh-16N/youtube-clone",
   },
@@ -64,6 +64,16 @@ const projectsData = [
     description: ["To calculate and show live the distance between two points on the Earth's surface given their latitude and longitude coordinates."],
     viewLink: "https://advikk.netlify.app/",
     codeLink: "https://github.com/Ganesh-16N/advik",
+  },
+  {
+    id: "TeamMaker",
+    title: "Team Maker",
+    image: team,
+    description: [
+      "A mern stack application which includes Pagination, searching, sorting for creating teams based on various aspects.",
+    ],
+    viewLink: "https://users-team.netlify.app/",
+    codeLink: "https://github.com/Ganesh-16N/client",
   },
   {
     id: "bookShop",
@@ -112,7 +122,8 @@ const Projects = () => {
             <Project key={project.id} {...project} />
             ))}
 
-    <Mob></Mob>
+    {<Mob></Mob>}
+
         </div>
       </div>
     </div>

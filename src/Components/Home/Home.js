@@ -11,7 +11,7 @@ const Home = () => {
            Ganesh Nagargoje
           </h1>
           <p className="text-lg md:text-xl mb-8">
-          Innovative Front-End Web Developer | Mobile App Enthusiast | Crafting User-Centric Experiences
+          Innovative Web Developer (MERN) | Mobile App Enthusiast | Crafting User-Centric Experiences
           </p>
           <div className="flex space-x-4">
            
