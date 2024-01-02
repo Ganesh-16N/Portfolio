@@ -80,7 +80,7 @@ const projectsData = [
     title: "E Book Shop",
     image: bookShop,
     description: [
-      "Designed an Android application for an online book shop, offering a user-friendly experience."
+      "Developed a web application for an online book shop, offering a user-friendly experience."
       ," A MERN Application with features like login, book searching, and sorting, catering to both buyers and sellers."
     ],
     codeLink: "https://github.com/Ganesh-16N/E-Book-Store",
