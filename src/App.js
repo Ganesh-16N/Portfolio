@@ -11,6 +11,7 @@ import prof from "./Components/Home/prof.png";
 import profite from "./Components/Projects/Photos/profiteai image.png";
 import pmv from "./Components/Projects/Photos/pmv image.png";
 import fikaa_web from "./Components/Projects/Photos/fikaa_web.png";
+import fikaa_app from "./Components/Projects/Photos/fikaa_app.jpg";
 import eventImg from "./Components/Projects/Photos/linkup_web.png"; // Update to actual Event Management image
 
 // Theme Context
@@ -39,7 +40,8 @@ const skills = [
 
 // Top Projects
 const projectsData = [
-  { id: "Fikaa", title: "FIKAA", image: fikaa_web, description: "A fintech platform for mutual funds and digital gold, built with React, React Native, and secure payment integrations.", viewLink: "https://app.fikaa.in/login" },
+  { id: "Fikaa", title: "FIKAA Web", image: fikaa_web, description: "A fintech platform for mutual funds and digital gold, built with React, React Native, and secure payment integrations.", viewLink: "https://app.fikaa.in/login" },
+  { id: "FikaaApp", title: "FIKAA App", image: fikaa_app, description: "A fintech Application for mutual funds and digital gold, built with React, React Native, and secure payment integrations.", viewLink: "https://play.google.com/store/apps/details?id=com.fikaa_app&hl=en_IN" },
   { id: "EventManagement", title: "Event Management Platform", image: eventImg, description: "A Next.js-based system with ticket purchasing, QR code verification, and real-time notifications via WebSockets.", viewLink: "", codeLink: "https://github.com/Ganesh-16N/event-management" },
   { id: "Profite", title: "Profite.ai", image: profite, description: "A finance analysis tool using React, Redux, and Tailwind CSS for real-time data insights.", viewLink: "https://profitenewdev.netlify.app" },
   { id: "PlanMyVenture", title: "Plan My Venture", image: pmv, description: "A MERN-stack web app delivering scalable, responsive solutions for startups.", viewLink: "https://planmyventure.com/" },
