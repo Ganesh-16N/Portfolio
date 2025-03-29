@@ -13,6 +13,7 @@ import pmv from "./Components/Projects/Photos/pmv image.png";
 import fikaa_web from "./Components/Projects/Photos/fikaa_web.png";
 import fikaa_app from "./Components/Projects/Photos/fikaa_app.jpg";
 import eventImg from "./Components/Projects/Photos/linkup_web.png";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 // Theme Context
 const ThemeContext = React.createContext();
@@ -245,70 +246,100 @@ function App() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <div className={`${isDark ? "bg-black text-white" : "bg-indigo-50 text-indigo-900"} min-h-screen font-sans transition-colors duration-500`}>
-      <motion.nav
-        className={`fixed w-full top-0 z-20 ${isDark ? "bg-gray-900/90" : "bg-white/90"} backdrop-blur-lg shadow-lg border-b border-indigo-500/20`}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-          <motion.div whileHover={{ scale: 1.05 }} className="text-xl sm:text-2xl font-bold tracking-tight">Ganesh Nagargoje</motion.div>
-          <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-            {["Home", "About", "Experience", "Skills", "Projects", "Contacts"].map((item) => (
-              <Link
-                key={item}
-                to={item}
-                spy
-                smooth
-                offset={-70}
-                duration={700}
-                className={`cursor-pointer text-sm lg:text-base ${isDark ? "text-indigo-200 hover:text-indigo-400" : "text-indigo-700 hover:text-indigo-900"} font-medium transition-colors`}
-              >
-                <motion.span whileHover={{ y: -2 }}>{item}</motion.span>
-              </Link>
-            ))}
-            <motion.button onClick={() => setIsDark(!isDark)} whileHover={{ rotate: 180 }} whileTap={{ scale: 0.9 }} className="text-xl sm:text-2xl">
-              {isDark ? <FiSun className="text-yellow-400" /> : <FiMoon className="text-indigo-600" />}
-            </motion.button>
-          </div>
-          <motion.button onClick={toggleMenu} whileTap={{ scale: 0.9 }} className="md:hidden text-2xl sm:text-3xl">{menuOpen ? <FiX /> : <FiMenu />}</motion.button>
-        </div>
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div
-              className={`md:hidden ${isDark ? "bg-gray-900" : "bg-white"} text-center py-6 shadow-lg`}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+    <>
+      <Helmet>
+        <title>Ganesh Nagargoje | Front-End Developer Portfolio</title>
+        <meta name="description" content="Portfolio of Ganesh Nagargoje, a Front-End Developer specializing in React, Next.js, and fintech solutions. Explore my projects and skills." />
+        <meta name="keywords" content="Ganesh Nagargoje, Front-End Developer, React, Next.js, React Native, Fintech, Portfolio" />
+        <meta name="author" content="Ganesh Nagargoje" />
+        <meta property="og:title" content="Ganesh Nagargoje | Front-End Developer Portfolio" />
+        <meta property="og:description" content="Explore the portfolio of Ganesh Nagargoje, showcasing expertise in React, Next.js, and fintech development." />
+        <meta property="og:image" content={prof} />
+        <meta property="og:url" content="https://ganesh-nagargoje.netlify.app/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Ganesh Nagargoje",
+            "jobTitle": "Front-End Developer",
+            "url": "https://ganesh-nagargoje.netlify.app/",
+            "sameAs": [
+              "https://www.linkedin.com/in/ganesh-nagargoje-3a5238231/",
+              "https://twitter.com/ganunagargoje16",
+              "https://github.com/Ganesh-16N"
+            ]
+          })}
+        </script>
+      </Helmet>
+
+      <div className={`${isDark ? "bg-black text-white" : "bg-indigo-50 text-indigo-900"} min-h-screen font-sans transition-colors duration-500`}>
+        <motion.nav
+          className={`fixed w-full top-0 z-20 ${isDark ? "bg-gray-900/90" : "bg-white/90"} backdrop-blur-lg shadow-lg border-b border-indigo-500/20`}
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <motion.div whileHover={{ scale: 1.05 }} className="text-xl sm:text-2xl font-bold tracking-tight">Ganesh Nagargoje</motion.div>
+            <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
               {["Home", "About", "Experience", "Skills", "Projects", "Contacts"].map((item) => (
-                <Link key={item} to={item} spy smooth offset={-70} duration={700} className={`block py-3 text-base sm:text-lg ${isDark ? "text-indigo-200 hover:text-indigo-400" : "text-indigo-700 hover:text-indigo-900"} font-medium`} onClick={toggleMenu}>
-                  <motion.span whileHover={{ scale: 1.1 }}>{item}</motion.span>
+                <Link
+                  key={item}
+                  to={item}
+                  spy
+                  smooth
+                  offset={-70}
+                  duration={700}
+                  className={`cursor-pointer text-sm lg:text-base ${isDark ? "text-indigo-200 hover:text-indigo-400" : "text-indigo-700 hover:text-indigo-900"} font-medium transition-colors`}
+                >
+                  <motion.span whileHover={{ y: -2 }}>{item}</motion.span>
                 </Link>
               ))}
-              <motion.button onClick={() => setIsDark(!isDark)} whileHover={{ rotate: 180 }} whileTap={{ scale: 0.9 }} className="mt-4 text-xl sm:text-2xl">{isDark ? <FiSun className="text-yellow-400" /> : <FiMoon className="text-indigo-600" />}</motion.button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.nav>
-      <div className="pt-16 sm:pt-20">
-        <Home />
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Contact />
+              <motion.button onClick={() => setIsDark(!isDark)} whileHover={{ rotate: 180 }} whileTap={{ scale: 0.9 }} className="text-xl sm:text-2xl">
+                {isDark ? <FiSun className="text-yellow-400" /> : <FiMoon className="text-indigo-600" />}
+              </motion.button>
+            </div>
+            <motion.button onClick={toggleMenu} whileTap={{ scale: 0.9 }} className="md:hidden text-2xl sm:text-3xl">{menuOpen ? <FiX /> : <FiMenu />}</motion.button>
+          </div>
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.div
+                className={`md:hidden ${isDark ? "bg-gray-900" : "bg-white"} text-center py-6 shadow-lg`}
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {["Home", "About", "Experience", "Skills", "Projects", "Contacts"].map((item) => (
+                  <Link key={item} to={item} spy smooth offset={-70} duration={700} className={`block py-3 text-base sm:text-lg ${isDark ? "text-indigo-200 hover:text-indigo-400" : "text-indigo-700 hover:text-indigo-900"} font-medium`} onClick={toggleMenu}>
+                    <motion.span whileHover={{ scale: 1.1 }}>{item}</motion.span>
+                  </Link>
+                ))}
+                <motion.button onClick={() => setIsDark(!isDark)} whileHover={{ rotate: 180 }} whileTap={{ scale: 0.9 }} className="mt-4 text-xl sm:text-2xl">{isDark ? <FiSun className="text-yellow-400" /> : <FiMoon className="text-indigo-600" />}</motion.button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.nav>
+        <div className="pt-16 sm:pt-20">
+          <Home />
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Contact />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
 export default function WrappedApp() {
   return (
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
