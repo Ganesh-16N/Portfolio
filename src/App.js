@@ -5,6 +5,7 @@ import { Link } from "react-scroll";
 import { FaReact, FaNode, FaGithub } from "react-icons/fa";
 import { SiJavascript, SiTypescript, SiMongodb, SiTailwindcss, SiNextdotjs, SiRedux, SiFirebase } from "react-icons/si";
 import { RiGithubFill, RiLinkedinFill, RiMailFill, RiTwitterFill } from "react-icons/ri";
+import eventVideo from "./Components/Projects/Photos/event_management_video.mp4";
 
 // Images (update paths as needed)
 import prof from "./Components/Home/prof.png";
@@ -39,13 +40,25 @@ const skills = [
   { icon: <FaGithub className="text-4xl md:text-5xl mb-2 text-gray-200" />, name: "Git/GitHub" },
 ];
 
-// Top Projects
-const projectsData = [
+// Web Projects
+const webProjects = [
   { id: "Fikaa", title: "FIKAA Web", image: fikaa_web, description: "A fintech platform for mutual funds and digital gold, built with React, React Native, and secure payment integrations.", viewLink: "https://app.fikaa.in/login" },
-  { id: "FikaaApp", title: "FIKAA App", image: fikaa_app, description: "A fintech Application for mutual funds and digital gold, built with React, React Native, and secure payment integrations.", viewLink: "https://play.google.com/store/apps/details?id=com.fikaa_app&hl=en_IN" },
-  { id: "EventManagement", title: "Event Management Platform", image: eventImg, description: "A Next.js-based system with ticket purchasing, QR code verification, and real-time notifications via WebSockets.", viewLink: "", codeLink: "https://github.com/Ganesh-16N/event-management" },
   { id: "Profite", title: "Profite.ai", image: profite, description: "A finance analysis tool using React, Redux, and Tailwind CSS for real-time data insights.", viewLink: "https://profitenewdev.netlify.app" },
   { id: "PlanMyVenture", title: "Plan My Venture", image: pmv, description: "A MERN-stack web app delivering scalable, responsive solutions for startups.", viewLink: "https://planmyventure.com/" },
+];
+
+// App Projects
+const appProjects = [
+  { id: "FikaaApp", title: "FIKAA App", image: fikaa_app, description: "A fintech Application for mutual funds and digital gold, built with React, React Native, and secure payment integrations.", viewLink: "https://play.google.com/store/apps/details?id=com.fikaa_app&hl=en_IN" },
+  { 
+    id: "EventManagement", 
+    title: "Event Booking", 
+    image: eventImg, 
+    video: eventVideo, 
+    description: "A Next.js-based mobile app with ticket purchasing, QR code verification, and real-time notifications via WebSockets.", 
+    viewLink: "", 
+    codeLink: "https://github.com/Ganesh-16N/event-management" 
+  },
 ];
 
 // Animation Variants
@@ -62,6 +75,7 @@ const staggerContainer = {
   },
 };
 
+// Home Component
 const Home = () => {
   const { isDark } = useTheme();
   const { scrollYProgress } = useScroll();
@@ -94,6 +108,7 @@ const Home = () => {
   );
 };
 
+// About Component
 const About = () => {
   const { isDark } = useTheme();
   return (
@@ -108,6 +123,7 @@ const About = () => {
   );
 };
 
+// Experience Component
 const Experience = () => {
   const { isDark } = useTheme();
   const timeline = [
@@ -140,6 +156,7 @@ const Experience = () => {
   );
 };
 
+// Skills Component
 const Skills = () => {
   const { isDark } = useTheme();
   return (
@@ -165,23 +182,38 @@ const Skills = () => {
   );
 };
 
-const Project = ({ title, image, description, viewLink, codeLink }) => {
+// Project Component
+const Project = ({ title, image, video, description, viewLink, codeLink, isApp }) => {
   const { isDark } = useTheme();
+  const cardClasses = isApp 
+    ? "w-48 h-[32rem] mx-auto" // Adjusted height to fit h-88 image/video (352px) + text/buttons
+    : "w-full h-80"; // Web project size
+
   return (
-    <motion.div className="relative w-full h-80 perspective-1000" whileHover={{ scale: 1.05, y: -10 }} transition={{ duration: 0.4, ease: "easeOut" }}>
+    <motion.div className={`relative ${cardClasses} perspective-1000`} whileHover={{ scale: 1.05, y: -10 }} transition={{ duration: 0.4, ease: "easeOut" }}>
       <motion.div className="w-full h-full transition-transform duration-600 transform-style-3d" initial={{ rotateY: 0 }} whileHover={{ rotateY: 180 }}>
         <div className={`absolute w-full h-full backface-hidden ${isDark ? "bg-gray-800 text-white" : "bg-white text-indigo-900"} rounded-2xl shadow-xl overflow-hidden`}>
-          <img src={image} alt={title} className="w-full h-48 object-cover" /> {/* Image displayed here */}
+          {video ? (
+            <video 
+              src={video} 
+              controls 
+              autoPlay 
+              loop 
+              muted 
+              className={`w-full  ${isApp ? "h-[26rem]" : "h-48"} object-cover`} 
+            />
+          ) : (
+            <img src={image} alt={title} className={`w-full ${isApp ? "h-84" : "h-48"} object-cover`} />
+          )}
           <div className="p-4">
             <h3 className="text-xl font-semibold">{title}</h3>
             <p className={`${isDark ? "text-indigo-300" : "text-gray-600"} mt-2 text-sm`}>{description}</p>
           </div>
         </div>
-        <div className={`absolute w-full h-full backface-hidden  rounded-2xl shadow-xl flex flex-col items-center justify-center transform rotate-y-180 p-4`}>
-          {/* <h3 className="text-xl font-semibold mb-4">{title}</h3> */}
+        <div className={`absolute w-full h-full backface-hidden rounded-2xl shadow-xl flex flex-col items-center justify-center transform rotate-y-180 p-4`}>
           <div className="flex space-x-4">
             {viewLink && <a href={viewLink} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 rounded-full ${isDark ? "bg-indigo-500 hover:bg-indigo-600" : "bg-indigo-600 hover:bg-indigo-700"} text-white transition-all`}>Explore</a>}
-            {codeLink && <a href={codeLink} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 rounded-full ${isDark ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-300 hover:bg-gray-400"} ${isDark ? "text-white" : "text-indigo-900"} transition-all`}>Code</a>}
+            {/* {codeLink && <a href={codeLink} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 rounded-full ${isDark ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-300 hover:bg-gray-400"} ${isDark ? "text-white" : "text-indigo-900"} transition-all`}>Code</a>} */}
           </div>
         </div>
       </motion.div>
@@ -189,16 +221,44 @@ const Project = ({ title, image, description, viewLink, codeLink }) => {
   );
 };
 
+// Projects Component
 const Projects = () => {
   const { isDark } = useTheme();
   return (
     <section id="Projects" className={`py-12 sm:py-24 ${isDark ? "bg-gray-800" : "bg-indigo-50"}`}>
       <div className="container mx-auto px-4 sm:px-6">
-        <motion.h2 variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center ${isDark ? "text-white" : "text-indigo-900"} mb-8 sm:mb-12`}>My Projects</motion.h2>
-        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {projectsData.map((project) => (
+        {/* Web Projects */}
+        <motion.h2 variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center ${isDark ? "text-white" : "text-indigo-900"} mb-8 sm:mb-12`}>Web Projects</motion.h2>
+        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
+          {webProjects.map((project) => (
             <motion.div key={project.id} variants={fadeInUp}>
-              <Project {...project} />
+              <Project 
+                title={project.title} 
+                image={project.image} 
+                video={project.video} 
+                description={project.description} 
+                viewLink={project.viewLink} 
+                codeLink={project.codeLink} 
+                isApp={false} // Web project
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* App Projects */}
+        <motion.h2 variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center ${isDark ? "text-white" : "text-indigo-900"} mb-8 sm:mb-12`}>App Projects</motion.h2>
+        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid justify-center grid-cols-1 sm:grid-cols-2  gap-6 sm:gap-8">
+          {appProjects.map((project) => (
+            <motion.div key={project.id} variants={fadeInUp}>
+              <Project 
+                title={project.title} 
+                image={project.image} 
+                video={project.video} 
+                description={project.description} 
+                viewLink={project.viewLink} 
+                codeLink={project.codeLink} 
+                isApp={true} // App project
+              />
             </motion.div>
           ))}
         </motion.div>
@@ -207,6 +267,7 @@ const Projects = () => {
   );
 };
 
+// Contact Component
 const Contact = () => {
   const { isDark } = useTheme();
   return (
@@ -240,6 +301,7 @@ const Contact = () => {
   );
 };
 
+// App Component
 function App() {
   const { isDark, setIsDark } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -334,6 +396,7 @@ function App() {
   );
 }
 
+// Wrapped App
 export default function WrappedApp() {
   return (
     <HelmetProvider>
