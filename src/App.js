@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { FiMenu, FiX, FiSun, FiMoon, FiDownload, FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub, FiTwitter, FiExternalLink, FiCode, FiZap, FiStar, FiTrendingUp, FiShield, FiCpu, FiDatabase, FiGlobe, FiSmartphone, FiCalendar, FiAward, FiUsers, FiHeart } from "react-icons/fi";
-import { FaReact, FaNode, FaGithub } from "react-icons/fa";
-import { SiJavascript, SiTypescript, SiMongodb, SiTailwindcss, SiNextdotjs, SiRedux, SiFirebase } from "react-icons/si";
-import { RiGithubFill, RiLinkedinFill, RiMailFill, RiTwitterFill } from "react-icons/ri";
 import HeroDemo from "./Components/Hero";
 import AboutDemo from "./Components/About/About";
 import Experience from "./Components/Experience/Experience";
