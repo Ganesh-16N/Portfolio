@@ -1,0 +1,68 @@
+# Ganesh Nagargoje - Senior React Native Developer Resume
+
+This is a placeholder for the actual PDF resume file.
+The real resume should be a professionally formatted PDF document.
+
+## Contact Information
+- Email: ganesh.nagargoje@example.com
+- Phone: +91 98765 43210
+- LinkedIn: linkedin.com/in/ganesh-nagargoje
+- GitHub: github.com/Ganesh-16N
+- Location: Mumbai, Maharashtra, India
+
+## Professional Summary
+Senior React Native Developer with 3+ years of experience in building high-performance mobile applications. 
+Expert in cross-platform development, performance optimization, and native integrations. 
+Delivered 8+ production apps with 500K+ downloads and 4.8+ star ratings.
+
+## Technical Skills
+- **React Native**: Expert (3+ years)
+- **TypeScript**: Advanced
+- **Redux/State Management**: Expert
+- **Firebase**: Advanced
+- **Performance Optimization**: Expert
+- **Native Integrations**: Advanced
+- **App Store Deployment**: Expert
+
+## Work Experience
+
+### Senior React Native Developer
+**AlphawareNext** | Apr 2024 - Present
+- Developed enterprise-grade loan recovery agent app serving 500+ agents
+- Implemented real-time GPS tracking with 98% accuracy
+- Optimized app performance achieving 98% crash-free rate
+- Mentored junior developers and established coding standards
+
+### React Native Developer
+**FIKAA** | Feb 2024 - March 2025
+- Built fintech app with 25K+ downloads and 4.8/5 rating
+- Implemented secure payment gateway integration
+- Reduced app load times by 40% through optimization
+- Integrated biometric authentication and push notifications
+
+## Projects
+
+### FIKAA - Fintech Mobile App
+- **Technologies**: React Native, TypeScript, Redux, Firebase
+- **Downloads**: 25K+
+- **Rating**: 4.8/5
+- **Features**: Payment processing, biometric auth, portfolio tracking
+
+### Loan Recovery Agent App
+- **Technologies**: React Native, React Query, Zustand, GPS
+- **Users**: 500+ agents
+- **Accuracy**: 98%
+- **Features**: Real-time tracking, digital signatures, camera integration
+
+## Education
+- **Bachelor's in Computer Science** | University Name | 2020-2024
+
+## Certifications
+- React Native Advanced Concepts
+- Mobile App Performance Optimization
+- App Store Optimization
+
+## Languages
+- English (Professional)
+- Hindi (Native)
+- Marathi (Native)

@@ -435,7 +435,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-black relative overflow-hidden min-h-screen">
+    <section id="contact" className="py-16 sm:py-20 md:py-24 bg-black relative overflow-hidden min-h-screen px-4 sm:px-6 lg:px-8">
       {/* Background Effects */}
       <HolographicGrid />
       <NeuralNetwork />
@@ -482,7 +482,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h2 
-            className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
             animate={{
               backgroundPosition: ["0%", "100%", "0%"]
             }}
@@ -596,7 +596,7 @@ const Contact = () => {
               ease: "easeInOut"
             }}
           >
-            "In the quantum realm of 2122, every connection shapes the future of technology."
+            "In the quantum realm of 2025, every connection shapes the future of technology."
           </motion.p>
           
           <div className="flex justify-center items-center gap-4 text-sm text-gray-500 font-mono">

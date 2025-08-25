@@ -1,18 +1,11 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { FiMenu, FiX, FiSun, FiMoon, FiDownload, FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub, FiTwitter, FiExternalLink, FiCode, FiZap, FiStar, FiTrendingUp, FiShield, FiCpu, FiDatabase, FiGlobe, FiSmartphone, FiCalendar, FiAward, FiUsers, FiHeart } from "react-icons/fi";
+import { FiDownload, FiMail, FiMapPin, FiLinkedin, FiGithub, FiExternalLink, FiCode, FiZap, FiStar, FiTrendingUp, FiShield, FiCpu, FiDatabase, FiGlobe, FiSmartphone, FiCalendar, FiAward, FiUsers, FiHeart } from "react-icons/fi";
 import { FaReact, FaNode, FaGithub } from "react-icons/fa";
-import { SiJavascript, SiTypescript, SiMongodb, SiTailwindcss, SiNextdotjs, SiRedux, SiFirebase } from "react-icons/si";
+import { SiJavascript, SiTypescript, SiReact, SiMongodb, SiTailwindcss, SiNextdotjs, SiRedux, SiFirebase } from "react-icons/si";
 import { RiGithubFill, RiLinkedinFill, RiMailFill, RiTwitterFill } from "react-icons/ri";
 
-// Theme Context
-const ThemeContext = React.createContext();
-const useTheme = () => useContext(ThemeContext);
 
-const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(true);
-  return <ThemeContext.Provider value={{ isDark, setIsDark }}>{children}</ThemeContext.Provider>;
-};
 
 // Quantum Particle System
 const QuantumParticle = ({ delay = 0 }) => (
@@ -217,7 +210,7 @@ const HolographicCard = ({ children, className = "", ...props }) => {
 // About Section with Quantum Background
 const About = () => {
   return (
-    <section id="About" className="py-24 bg-black relative overflow-hidden min-h-screen">
+    <section id="About" className="py-16 sm:py-20 md:py-24 bg-black relative overflow-hidden min-h-screen px-4 sm:px-6 lg:px-8">
       {/* Background Effects from Contact Component */}
       <HolographicGrid />
       <NeuralNetwork />
@@ -263,7 +256,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h2 
-            className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
             animate={{
               backgroundPosition: ["0%", "100%", "0%"]
             }}
@@ -284,7 +277,7 @@ const About = () => {
           />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Side - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -372,11 +365,275 @@ const About = () => {
   );
 };
 
-// Example usage with theme provider
-export default function AboutDemo() {
+// React Native Skills Section
+const ReactNativeSkills = () => {
+  const skillCategories = [
+    {
+      title: "Core React Native",
+      icon: <SiReact className="text-2xl" />,
+      skills: [
+        { name: "React Native CLI", level: 95 },
+        { name: "Expo Development", level: 90 },
+        { name: "TypeScript", level: 88 },
+        { name: "JavaScript ES6+", level: 95 },
+        { name: "JSX/TSX", level: 92 }
+      ]
+    },
+    {
+      title: "State Management",
+      icon: <SiRedux className="text-2xl" />,
+      skills: [
+        { name: "Redux Toolkit", level: 90 },
+        { name: "Zustand", level: 85 },
+        { name: "Context API", level: 92 },
+        { name: "React Query", level: 88 },
+        { name: "AsyncStorage", level: 85 }
+      ]
+    },
+    {
+      title: "Native Features",
+      icon: <FiSmartphone className="text-2xl" />,
+      skills: [
+        { name: "Camera Integration", level: 90 },
+        { name: "GPS/Location", level: 88 },
+        { name: "Push Notifications", level: 85 },
+        { name: "Biometric Auth", level: 82 },
+        { name: "Deep Linking", level: 80 }
+      ]
+    },
+    {
+      title: "Performance & Testing",
+      icon: <FiZap className="text-2xl" />,
+      skills: [
+        { name: "Performance Optimization", level: 88 },
+        { name: "Memory Management", level: 85 },
+        { name: "Jest Testing", level: 82 },
+        { name: "Detox E2E", level: 78 },
+        { name: "Bundle Optimization", level: 85 }
+      ]
+    },
+    {
+      title: "Backend & APIs",
+      icon: <SiFirebase className="text-2xl" />,
+      skills: [
+        { name: "Firebase", level: 90 },
+        { name: "REST APIs", level: 92 },
+        { name: "GraphQL", level: 80 },
+        { name: "WebSockets", level: 85 },
+        { name: "Node.js", level: 88 }
+      ]
+    },
+    {
+      title: "Deployment & CI/CD",
+      icon: <FiShield className="text-2xl" />,
+      skills: [
+        { name: "App Store Deployment", level: 90 },
+        { name: "Play Store Deployment", level: 90 },
+        { name: "CodePush", level: 85 },
+        { name: "Fastlane", level: 80 },
+        { name: "GitHub Actions", level: 85 }
+      ]
+    }
+  ];
+
   return (
-    <ThemeProvider>
-      <About />
-    </ThemeProvider>
+    <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              React Native Expertise
+            </span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Comprehensive React Native development skills covering mobile app architecture, 
+            performance optimization, native integrations, and deployment strategies.
+          </p>
+        </motion.div>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={category.title}
+              className="bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 rounded-2xl border border-cyan-500/30 shadow-2xl backdrop-blur-xl overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+            >
+              {/* Category Header */}
+              <div className="p-6 border-b border-cyan-500/20 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
+                <div className="flex items-center gap-3">
+                  <div className="text-cyan-400">
+                    {category.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                </div>
+              </div>
+              
+              {/* Skills List */}
+              <div className="p-6">
+                <div className="space-y-4">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skill.name}
+                      className="space-y-2"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
+                    >
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-medium text-sm">{skill.name}</span>
+                        <span className="text-cyan-400 font-bold text-sm">{skill.level}%</span>
+                      </div>
+                      <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                        <motion.div
+                          className="h-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: skillIndex * 0.1 }}
+                        />
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Advanced Features Showcase */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h3 className="text-3xl font-bold text-white text-center mb-12">
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Advanced Mobile Features
+            </span>
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <FiSmartphone className="text-4xl" />,
+                title: "Native Integrations",
+                description: "Deep integration with device features like camera, GPS, biometrics, and sensors",
+                features: ["Camera & Gallery", "GPS Tracking", "Biometric Auth", "Device Sensors"],
+                color: "from-cyan-500 to-blue-500"
+              },
+              {
+                icon: <FiZap className="text-4xl" />,
+                title: "Performance Optimization",
+                description: "Advanced techniques for smooth animations and optimal memory usage",
+                features: ["Bundle Optimization", "Memory Management", "Lazy Loading", "Image Optimization"],
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                icon: <FiShield className="text-4xl" />,
+                title: "Security & Deployment",
+                description: "Enterprise-grade security and seamless deployment strategies",
+                features: ["Code Obfuscation", "API Security", "App Store Deployment", "CI/CD Pipeline"],
+                color: "from-green-500 to-emerald-500"
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                className="group relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+              >
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                
+                {/* Content */}
+                <div className="relative bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 rounded-2xl p-8 border border-cyan-500/30 backdrop-blur-xl h-full">
+                  <div className={`text-center mb-6 p-4 rounded-xl bg-gradient-to-br ${feature.color} bg-opacity-10 border border-cyan-500/30`}>
+                    <div className="text-cyan-400 mb-3">
+                      {feature.icon}
+                    </div>
+                    <h4 className="text-xl font-bold text-white mb-2">{feature.title}</h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    {feature.features.map((item, itemIndex) => (
+                      <motion.div 
+                        key={item} 
+                        className="flex items-center gap-3 text-sm text-gray-300"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
+                      >
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full flex-shrink-0" />
+                        <span>{item}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Performance Metrics */}
+        <motion.div
+          className="mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h3 className="text-3xl font-bold text-white text-center mb-12">
+            <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+              Performance Achievements
+            </span>
+          </h3>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { label: "Bundle Size", value: "2.1MB", improvement: "40%", icon: <FiZap className="text-2xl" /> },
+              { label: "Startup Time", value: "1.2s", improvement: "57%", icon: <FiTrendingUp className="text-2xl" /> },
+              { label: "Memory Usage", value: "45MB", improvement: "44%", icon: <FiCpu className="text-2xl" /> },
+              { label: "App Rating", value: "4.8★", improvement: "98%", icon: <FiStar className="text-2xl" /> }
+            ].map((metric, index) => (
+              <motion.div
+                key={metric.label}
+                className="bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 rounded-2xl p-6 border border-cyan-500/30 backdrop-blur-xl text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                <div className="text-cyan-400 mb-3 flex justify-center">
+                  {metric.icon}
+                </div>
+                <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
+                <div className="text-gray-300 text-sm mb-1">{metric.label}</div>
+                <div className="text-green-400 text-xs font-semibold">+{metric.improvement}</div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
-}
+};
+
+export default About;
