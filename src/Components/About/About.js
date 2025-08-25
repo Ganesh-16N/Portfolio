@@ -210,7 +210,7 @@ const HolographicCard = ({ children, className = "", ...props }) => {
 // About Section with Quantum Background
 const About = () => {
   return (
-    <section id="About" className="py-16 sm:py-20 md:py-24 bg-black relative overflow-hidden min-h-screen px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 sm:py-20 md:py-24 bg-black relative overflow-hidden min-h-screen px-4 sm:px-6 lg:px-8">
       {/* Background Effects from Contact Component */}
       <HolographicGrid />
       <NeuralNetwork />

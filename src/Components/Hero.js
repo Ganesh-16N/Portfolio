@@ -113,7 +113,7 @@ const Hero = () => {
   }, [roles.length]);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black px-4 sm:px-6 lg:px-8">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black px-4 sm:px-6 lg:px-8">
       {/* Quantum Background Effects */}
       <HolographicGrid />
       
@@ -432,7 +432,16 @@ const Hero = () => {
               variant="primary" 
               size="md"
               className="w-full sm:w-auto"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                  const offsetTop = element.offsetTop - 80;
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
             >
               <FiMail className="text-base sm:text-lg" />
               Start Project
@@ -442,7 +451,16 @@ const Hero = () => {
               variant="ghost" 
               size="md"
               className="w-full sm:w-auto"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                const element = document.getElementById('projects');
+                if (element) {
+                  const offsetTop = element.offsetTop - 80;
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
             >
               <FiPlay className="text-base sm:text-lg" />
               View Projects

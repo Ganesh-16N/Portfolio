@@ -30,7 +30,7 @@ const ReactNativeShowcase = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+    <section id="skills" className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
