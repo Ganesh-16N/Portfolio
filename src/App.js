@@ -1,7 +1,9 @@
 import React, { lazy, Suspense } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navigation from "./Components/common/Navigation";
 import LoadingSpinner from "./Components/common/LoadingSpinner";
+import SEO from "./Components/SEO/SEO";
 
 // Lazy load components for better performance
 const Hero = lazy(() => import("./Components/Hero"));
@@ -15,6 +17,7 @@ const Contact = lazy(() => import("./Components/Contact/Contact"));
 const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-950 to-black">
+      <SEO />
       <Navigation />
       <Suspense fallback={<LoadingSpinner />}>
         <Hero />
@@ -28,11 +31,13 @@ const App = () => {
   );
 };
 
-// Wrapped App with Theme Provider
+// Wrapped App with Theme Provider and Helmet Provider
 export default function Portfolio() {
   return (
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }

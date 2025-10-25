@@ -66,7 +66,7 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: "Senior React Native Developer",
+      title: "Software developer",
       company: "AlphawareNext",
       location: "Mumbai, Maharashtra",
       duration: "Apr 2024 – Present",
@@ -121,7 +121,7 @@ const Experience = () => {
       title: "Front-End Developer",
       company: "Plan My Venture",
       location: "Mumbai, Maharashtra",
-      duration: "Jan 2023 – Jun 2023",
+      duration: "Jan 2023 – Dec 2023",
       status: "COMPLETED",
       description: "Led Profite.ai development with React.js and Redux, integrating Firebase, resulting in a 25% increase in user engagement.",
       technologies: ["TypeScript", "React.js", "Firebase", "Node.js", "MongoDB", "Express.js"],

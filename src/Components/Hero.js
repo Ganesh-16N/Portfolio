@@ -86,7 +86,7 @@ const HolographicGrid = () => (
 const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0);
   const roles = [
-    "Senior React Native Developer",
+    "React Developer",
     "Performance Optimization Specialist",
     "Cross-Platform Expert",
     "Mobile App Architect"
@@ -267,7 +267,7 @@ const Hero = () => {
                 ease: "easeInOut"
               }}
             >
-              Senior React Native Developer with expertise in building high-performance, scalable mobile applications. 
+              React Developer with expertise in building high-performance, scalable mobile applications. 
               Specialized in cross-platform development, performance optimization, and delivering exceptional user experiences.
             </motion.p>
           </motion.div>
