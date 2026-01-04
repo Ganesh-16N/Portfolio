@@ -121,7 +121,7 @@ const Experience = () => {
       title: "Front-End Developer",
       company: "Plan My Venture",
       location: "Mumbai, Maharashtra",
-      duration: "Jan 2023 – Dec 2023",
+      duration: "Jan 2023 – Jan 2024",
       status: "COMPLETED",
       description: "Led Profite.ai development with React.js and Redux, integrating Firebase, resulting in a 25% increase in user engagement.",
       technologies: ["TypeScript", "React.js", "Firebase", "Node.js", "MongoDB", "Express.js"],
